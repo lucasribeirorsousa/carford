@@ -19,7 +19,11 @@ from routes.bp_carford import blueprint_carford
 app.register_blueprint(blueprint_carford)
 
 # rest_apis
-from resources.controller_carford import CustomersAPI
-api.add_resource(CustomersAPI, "/", "/api/v1/customer_api", endpoint="customer_api")
+from  resources.controller_login import LoginAPI
+from resources.controller_customer import CustomerAPI
+from resources.controller_owner import OwnerAPI
+api.add_resource(LoginAPI, "/", "/api/v1/login_api", endpoint="login_api")
+api.add_resource(CustomerAPI, "/", "/api/v1/customer_api", endpoint="customer_api")
+api.add_resource(OwnerAPI, "/", "/api/v1/owner_api", endpoint="owner_api")
 
 
